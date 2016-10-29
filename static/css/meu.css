@@ -1,0 +1,110 @@
+
+div#header
+{
+height: 850px;
+background-image: url(/static/imagens/0.gif);
+
+}
+div#primeiro{
+  height: 635px;
+  background: #e15a49;
+
+}
+.container
+{
+  padding-top:70px;
+  padding-bottom:0;
+}
+div#meio{
+   height: 635px;
+  background: #52c1ac;
+
+}
+.item 
+{
+text-decoration: none;
+}
+div#final
+{
+height: 635px;
+  background: violet;
+}
+.masthead-content
+{
+width:750px;height:300px;position:absolute;top:50%;left:50%;margin:-150px 0 0 -375px;color:#000;
+}
+#login 
+{
+font-size: 12px;
+position:absolute;top:50px;right:10px;height:50px;width:150px;color:#52c1ac;display:inline-block;z-index:100;padding-top:20px;text-align: center;  
+text-decoration: none;
+font-family: 'Roboto Slab', serif;
+background: teal;
+}
+
+.masthead-title{font-size:34px;line-height:51px;font-size:3.4rem;line-height:5.1rem ;color:#000;
+  font-family: 'Roboto Slab', serif;}
+.masthead-copy  
+{
+  color: black;
+} 
+.btn_logon{
+  position: absolute;
+  left: 30%;
+  width:200px;
+  text-align: center;
+  overflow: hidden;
+  border:1px solid #000;
+}
+.btn_logon a{
+  text-decoration: none;
+  font-size:27px;
+  display: block;
+  padding: 13px;
+  color:#000;
+  font-family: 'Roboto Slab', serif;
+  text-shadow:1px 1px 10px #999;
+  cursor: pointer;
+  opacity: 0.5;
+}
+.btn_logon a:hover{
+   opacity: 1;
+   
+} 
+ p {
+ color: #fff;
+ font-size: 18px;
+}
+span {
+ color: #fff;
+ font-size: 14px;
+}
+ h2 {
+ color: #fff;
+ font-size: 30px;
+}
+.icone {
+  height: 800px;
+  background: #FFF;
+  color: #333;
+  font-size: 17px;
+  font-family:'Roboto Slab' serif;
+}
+#missao 
+{
+  height: 800px;
+  background: cadetblue;
+  text-align: center;
+  padding: 80px;
+}
+.contato 
+{
+  height: 635px;
+  background: #ccc;
+  color: #000;
+}
+.form 
+{
+ margin-top: 200px;
+}
+

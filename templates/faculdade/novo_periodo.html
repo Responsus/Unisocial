@@ -1,0 +1,25 @@
+{% extends "faculdade/base.html" %}
+{% block content %}
+   <div id="centro">
+    <div class="six wide column">
+        <h4>Cadastro de Periodo</h4>
+        <div class="ui padded segment">
+            <div class="ui form">
+                <h4 class="ui dividing header">Nome</h4> 
+                <input id="periodo-nome" placeholder="Nome" type="text">
+                <h4 class="ui dividing header">Inicio</h4> 
+                <input class="time" id="periodo-inicio" placeholder="Horario de Inicio" type="text">
+                <h4 class="ui dividing header">Intervalo</h4> 
+                <input class="time" id="periodo-intervalo" placeholder="Horario de Intervalo" type="text">
+                <h4 class="ui dividing header">Fim</h4> 
+                <input class="time" id="periodo-fim" placeholder="Horario de Termino" type="text">
+                <br/>
+                <br/>
+                <div class="ui center aligned container"><button id="cadastrar-periodo" class="ui green button">Salvar</button></div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<script type="text/javascript" src="/static/js/faculdade/cad-periodos.js"></script>
+{% endblock %}

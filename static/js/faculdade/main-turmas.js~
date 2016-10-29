@@ -1,0 +1,49 @@
+$(document).ready(function(){
+	$.ajax({
+		url: "/api/faculdade/1/alunos/",
+		type: "GET",			
+	})
+	.done(function(data){
+		console.log(data.message);
+	})
+	.fail(function(data){
+		console.log(data.message);
+	})
+
+
+
+	$(".btn-excluir-turma").each(function(){
+		
+		$(this).click(function(){
+			console.log($(this));
+			$.ajax({
+				url: "/api/faculdade/1/turmas/"+$(this).attr('id')+"/",
+				type: "DELETE",			
+			})
+			.done(function(data){
+				alert(data.message);
+			})
+			.fail(function(data){
+				alert(data.message);
+			})
+		});
+		
+	})
+
+
+	$(".coupled.modal").modal({
+		allowMultiple: true
+	});
+
+    $('.second.modal').modal('attach events',".first.modal .add-aluno-turma");
+
+	$(".btn-editar-turma").each(function(){
+		var id = $(this).val("id");
+		$(this).click(function(){
+			$('.first.modal').modal('show');
+		});
+
+	})
+	
+
+});

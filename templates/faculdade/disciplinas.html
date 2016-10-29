@@ -1,0 +1,34 @@
+{% extends "faculdade/base.html" %}
+{% block content %}
+    <div id="centro">
+    <div class="eight wide column">
+        <span><a href="/faculdade/disciplinas/novo/"</a><button class="ui button"> <i class=" plus green icon"></i>Nova Disciplina </button></a></span>
+            <div class="ui action input">
+              <select class="ui compact selection dropdown">
+                <option value="all">Todas</option>
+                <option selected="" value="articles">Humanas</option>
+                <option value="products">Exatas</option>
+              </select>
+              <div type="submit" class="ui button">Filtrar</div>
+            </div>
+			{% for d in disciplinas %}
+			<div class="ui middle celled aligned divided list">
+			  <div class="item">	
+			  
+					<div class="right floated content">
+				 	 <button id="{{d.Disciplinas.id}}" class="ui blue tiny button btn-editar-disciplina">Editar</button>
+					 <button id="{{d.Disciplinas.id}}" class="ui red tiny button btn-excluir-disciplina">Excluir</button>
+					</div>					
+					<div class="content">			
+						<a class="ui black horizontal label">ID: {{ d.Disciplinas.id }}</a>
+						 {{ d.Disciplinas.nome }}
+				 	</div>
+			  </div> 			  
+			</div>
+             {% endfor %}
+        
+    </div>
+    </div>
+</div>
+<script type="text/javascript" src="/static/js/faculdade/main-disciplinas.js"></script>
+{% endblock %}

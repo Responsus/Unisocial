@@ -1,0 +1,27 @@
+{% extends "faculdade/base.html" %}
+{% block content %}
+    <div id="centro">
+    <div class="six wide column">
+        <span><a href="/faculdade/area/novo/"</a><button class="ui  button"> <i class=" plus green icon"> </i>Nova Área 
+            </button></a></span>
+			{% for a in areas %}
+			<div class="ui middle celled aligned divided list">
+			  <div class="item">	
+			  
+					<div class="right floated content">
+				 	 <button id="{{a.Areas.id}}" class="ui blue tiny button btn-editar-disciplina">Editar</button>
+					 <button id="{{a.Areas.id}}" class="ui red tiny button btn-excluir-disciplina">Excluir</button>
+					</div>					
+					<div class="content">			
+						<a class="ui black horizontal label">ID: {{ a.Areas.id }}</a>
+						 {{ a.Areas.nome }}
+				 	</div>
+			  </div> 			  
+			</div>
+             {% endfor %}
+
+    </div>
+    </div>
+</div>  
+<script type="text/javascript" src="/static/js/faculdade/main-areas.js"></script>
+{% endblock %}

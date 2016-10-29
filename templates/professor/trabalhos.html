@@ -1,0 +1,60 @@
+
+{% extends "/professor/base.html" %}
+{% block content %}
+<div id="centro"> 
+</br>   
+<div class="eight wide column">
+        <div class="row">
+            <div class="ui center aligned segment">
+             <h2 class="ui  header">Turma</h2>   
+             <div class="ui fluid search selection dropdown">
+  <input name="country" type="hidden">
+  <i class="dropdown icon"></i>
+  <div class="default text">Escolha a turma</div>
+  <div class="menu">
+  <div class="item" value="gti">GTI</div>
+  <div class="item" value="ads">ADS</div>
+  <div class="item" value="sistema">Sistema</div>
+  <div class="item" value="db">Banco de Dados</div>
+     </div>
+     </div>
+        </div>
+       </div>
+       <br/>
+      <div id="container">
+<table class="ui celled table">
+  <thead>
+    <tr>
+      <th>Grupos</th>
+      <th>Entrega</th>
+      <th>Nota</th>
+    </tr>
+  </thead>
+  <tbody>
+   <tr class="negative">
+      <td>Grupo 1</td>
+      <td><i class="icon close"></i> não feita</td>
+      <td>0</td>
+    </tr>
+    <tr class="positive">
+      <td>Grupo 2</td>
+      <td><i class="icon checkmark"></i> Ok</td>
+      <td><button class="ui blue button">Visualizar </button> </td>
+    </tr>
+    <tr class="negative">
+      <td>Grupo 3</td>
+      <td><i class="icon close"></i> não feita</td>
+      <td>0</td>
+    </tr>
+    <tr class="positive">
+      <td>Grupo 4</td>
+      <td><i class="icon checkmark"></i> Ok</td>
+      <td> <button class="ui blue button">Visualizar </button> </td>
+    </tr>
+  </tbody>
+</table>
+      </div>
+    </div>
+    </div> 
+</div> 
+{% endblock %}

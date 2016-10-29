@@ -1,0 +1,79 @@
+{% extends "aluno/base.html" %}
+{% block content %}   
+<div class="ui three column grid">
+
+    <div class="four wide column">
+        <div class="ui segment">
+            <div class="ui vertical menu">
+                <a href="#" class="thumbnail">
+                    <img class="ui medium circular image" src="/static/imagens/alunos/1.jpg" alt="Este é você">
+                </a>
+                <a class="teal item active">Mensagens <div class="ui teal pointing west label">1</div>
+                </a>
+                <a class="item">Notificaçoes <div class="ui label">51</div>
+                </a>
+                <a class="item">Provas <div class="ui label">1</div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="eight wide column">
+        <div class="row">
+
+<div class="ui segment">
+<div class="ui comments">
+  <div class="comment">
+    <a class="avatar">
+      <img src="/static/imagens/alunos/1.jpg">
+    </a>
+    <div class="content">
+      <a class="author">Alisson Menezes</a>
+      <div class="metadata">
+        <div class="date">2 dias atrás</div>
+      </div>
+      <div class="text">Ola pessoal,Proxima prova sera dia 10/09</div>
+    </div>
+  </div>
+</div>
+<div class="ui comments">
+  <div class="comment">
+    <a class="avatar">
+      <img src="/static/imagens/alunos/2.jpg">
+    </a>
+    <div class="content">
+      <a class="author">Alisson Menezes</a>
+      <div class="metadata">
+        <div class="date">2 dias atrás</div>
+      </div>
+      <div class="text">Proximo dia 10/5 nao havera aula</div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+        <div class="ui segment">
+      <div class="ui segment">
+        <label>Você Leciona</label>
+          <table class="ui celled padded table">
+            <thead>
+            <tr><th class="single line">Código</th><th>Nome</th><th>Turmas</th><th>Curso</th></tr>
+            <tr><td>6532</td><td>FMU</td><td>3</td><td>Análise de Sistemas</td></tr>
+            <tr><td>6532</td><td>Uninove</td><td>3</td><td>Ciência da Computação</td></tr>
+            </thead>
+          </table>
+        </div>
+
+        <div class="ui segment">
+        <label>Todas</label>
+          <table class="ui celled padded table">
+        <thead> 
+            <tr><th class="single line">Código</th><th>Nome</th><th>Turmas</th><th>Área</th><th></th></tr>
+            <tr><td>6532</td><td>Diego</td><td>3</td><td>Tecnologia</td><td>Curriculo</td></tr>
+            <tr><td>6532</td><td>Rafael</td><td>3</td><td>Design</td><td>Curriculo</td></tr>
+          </table>
+      </thead>
+        </div> 
+      </div>  
+{% endblock %}

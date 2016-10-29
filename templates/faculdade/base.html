@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+		<meta charset="utf-8">
+        <title>UniSocial</title>
+        <link rel="stylesheet" type="text/css" href="/static/css/normalize.css"></script>  
+        <link rel="stylesheet" type="text/css" href="/static/semantic/dist/semantic.min.css"></script>  
+        <script src="/static/js/prefixfree.js"></script>
+        <script src="/static/js/jquery.js"></script>
+         <script src="/static/js/mask.js"></script>
+          <script src="/static/js/mascara.js"></script>
+        <script src="/static/semantic/dist/semantic.min.js"></script>
+        <meta name="viewport" content="width = device-width,user-scalable = no,initial-scale=0.7,maximum-scale=1.0,minimum-scale=0.1">
+ <style type="text/css">
+  @media screen and (max-width: 768px){div#menu{display: none;}div#centro{ left:40%;right:40%;width:500px;}a#feed{display: block;}}
+ @media screen and (min-width: 769px){a#feed{display: none;}div#centro{width: 700px; }}
+ </style>       
+</head>
+<div class="ui secondary  menu">
+    <a href="/faculdade/" class="active item">Home </a>
+    <a class="item">Messagens </a>
+    <a class="item">Perfil </a>
+    <div class="right menu">
+        <a id="feed"class="ui item"> <i class="sidebar icon"> </i> menu <a/>
+        <a class="ui item" href="/logout/faculdade">Sair </a>
+    </div>
+      <div class="ui right demo vertical inverted sidebar labeled icon menu">
+    <a href="/faculdade/unidades"  class="item">
+      <i class="building icon"></i> 
+      Unidades
+    </a>
+    <a  href="/faculdade/cursos" class="item">
+      <i class="linux icon"></i> 
+      Cursos 
+    </a>
+    <a href="/faculdade/periodos" class="item">
+       <i class="wait icon"></i> 
+        Períodos
+    </a>
+    <a href="/faculdade/disciplinas" class="item">
+    <i class="cubes icon"></i> 
+        Disciplinas
+    </a>
+    <a href="/faculdade/areas"  class="item">
+       <i class="sitemap icon"></i> 
+       Áreas 
+    </a>
+    <a href="/faculdade/professores" class="item">
+     <i class="student icon"></i> 
+     Professores 
+    </a>
+    <a href="/faculdade/turmas"  class="item">
+       <i class="users icon"></i> 
+       Turmas 
+    </a>
+    <a href="/faculdade/alertas" class="item">
+       <i class="warning icon"></i> 
+       Alertas 
+    </a>
+    <a href="/faculdade/cadastro"  class="item">
+        <i class="settings icon"></i> 
+        Cadastro 
+    </a>
+  </div>
+</div>
+<div class="stick">
+<div id="menu"class="ui nine item labeled icon menu">
+    <a href="/faculdade/unidades" class="red item"><i class="building icon"></i> Unidades </a>
+    <a href="/faculdade/cursos" class="pink item"><i class="doctor icon"></i> Cursos </a>
+    <a href="/faculdade/periodos" class="yellow item"><i class="wait icon"></i> Períodos </a>
+    <a href="/faculdade/disciplinas" class="violet item"><i class="cubes icon"></i> Disciplinas </a>
+    <a href="/faculdade/areas" class="yellow item"><i class="sitemap icon"></i> Áreas </a>
+    <a href="/faculdade/professores" class="red item"><i class="student icon"></i> Professores </a>
+    <a href="/faculdade/turmas" class="violet item"><i class="users icon"></i> Turmas </a>
+    <a href="/faculdade/alertas" class="blue item"><i class="warning icon"></i> Alertas </a>
+    <a href="/faculdade/cadastro" class="blue item"><i class="add user icon"></i> Alunos </a>
+</div>
+</div>
+<body>
+    <br/>
+    <div  class="ui two column grid">
+    <div id="menu" class="three wide column">
+        <div class="ui segment">
+            <div class="ui card">
+                <a class="image" href="#">
+                    <img src="/static/imagens/faculdades/{{faculdade.id}}.png">
+                </a>
+                <div class="content">
+                    <a class="header" href="#">{{faculdade.nome}}</a>
+                    <div class="meta">  
+                        <a>Email : {{faculdade.email}}</a>
+                    <!--  <a>Celular : {{faculdade.cnpj}}</a> -->
+                    </div>
+                </div>
+            </div>
+            <div class="ui fluid secondary vertical pointing menu">
+                <a class="active item"> <i class="user icon"></i> Perfil </a>
+                <a class="item"> <i class="calendar icon"></i> Calendario </a>
+                <a class="item"> <i class="alarm icon"></i> Alertas </a>
+            </div>
+        </div>
+    </div>
+
+    {% block content %}
+
+    {% endblock %}
+    <div style="height:50px;">
+    </div>   
+<script type="text/javascript">
+$('.ui.dropdown')
+  .dropdown()
+;
+$('.ui.sidebar').sidebar({overlay: true})
+  .sidebar('attach events','#feed');
+;
+
+</script>
+<input type="hidden" id="faculdade-id" value="{{faculdade.id}}" />
+</body>
+</html>

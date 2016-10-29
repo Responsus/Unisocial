@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<title>menu</title>
+<style type="text/css">
+    *{
+      margin:0;
+      padding:0;
+    }
+   .container{
+   	 width:100%;
+   	 height:5000px;  
+   }
+   header{
+      width:100%;
+      height:100px;
+   }
+   nav.menu{
+   	 width:100%;
+   	 height:100px;
+   	 background-color:#ccc; 
+   }
+   .menu-fixo{
+   	 position:fixed;
+   	 top:0;
+   	 box-shadow:1px 1px 5px #000;
+   	 z-index: 1000;
+   };
+</style>
+</head>
+<body>
+	<div class="container">
+		<header>
+		</header>
+		<nav class="menu">
+		</nav>
+	</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+  $(document).ready(function(){
+    var altura = $(".menu").offset().top;
+       $(window).on('scroll',function(){
+         if($(window).scrollTop() > altura){
+            $(".menu").addClass('menu-fixo');
+         }else{$(".menu").removeClass('menu-fixo')}
+       });
+     });
+</script>
+</body>
+</html>

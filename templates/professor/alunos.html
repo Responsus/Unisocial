@@ -1,0 +1,94 @@
+
+{% extends "/professor/base.html" %}
+{% block content %}
+<div id="centro"> 
+</br>   
+<div class="eight wide column">
+        <div class="row">
+            <div class="ui center aligned segment">
+             <h2 class="ui  header">Turma</h2>   
+             <div class="ui fluid search selection dropdown">
+  <input name="country" type="hidden">
+  <i class="dropdown icon"></i>
+  <div class="default text">Escolha a turma</div>
+  <div class="menu">
+  <div class="item" value="gti">GTI</div>
+  <div class="item" value="ads">ADS</div>
+  <div class="item" value="sistema">Sistema</div>
+  <div class="item" value="db">Banco de Dados</div>
+     </div>
+     </div>
+        </div>
+       </div>
+       <br/>
+      <div id="container">
+<table class="ui very basic collapsing celled table">
+  <thead>
+    <tr><th>Alunos</th>
+    <th>Faltas</th>
+    <th>Notas</th>
+  </tr></thead>
+  <tbody>
+    <tr>
+      <td>
+        <h4 class="ui image header">
+          <img src="/static/imagens/alunos/1.jpg" class="ui mini rounded image">
+          <div class="content">Alisson machado de menezes 
+        </div>
+      </h4></td>
+      <td>
+        22
+      </td>
+      <td>
+        0
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h4 class="ui image header">
+          <img src="/static/imagens/alunos/2.jpg" class="ui mini rounded image">
+          <div class="content">Matthew machado de menezes
+        </div>
+      </h4></td>
+      <td>
+        15
+      </td>
+      <td>
+        8
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h4 class="ui image header">
+          <img src="/static/imagens/alunos/3.jpg" class="ui mini rounded image">
+          <div class="content">alana machado de menezes 
+        </div>
+      </h4></td>
+      <td>
+        12
+      </td>
+      <td>
+        7
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h4 class="ui image header">
+          <img src="/static/imagens/alunos/4.jpg" class="ui mini rounded image">
+          <div class="content">aline machado de menezes 
+        </div>
+      </h4></td>
+      <td>
+        11
+      </td>
+      <td>
+        9
+      </td>
+    </tr>
+  </tbody>
+</table>
+      </div>
+    </div>
+    </div> 
+</div> 
+{% endblock %}

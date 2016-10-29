@@ -1,0 +1,80 @@
+﻿{% extends "/base.index.html" %}
+{% block content %}
+<style type="text/css">
+    #page {
+        margin-top: 10%;
+        background: #01b2fe;
+        height: 600px;
+        color: #FFF;
+        font-family: "Avenir","HelveticaNeue","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+        font-size: 20px;
+        line-height: 22.6833px;
+        padding: 50px;
+    }
+
+    body {
+        height: 500px;
+        background: #384452;
+    }
+
+    .input {
+        height: 60px;
+    }
+    div.ui.search.dropdown.selection{
+        height:60px;
+        padding-top:22px;
+
+    }
+</style>
+<div id="page" class="ui two column stackable center aligned page grid">
+    <div class="ui stripe community vertical segment">
+        <div class="ui two column middle aligned very relaxed stackable grid container">
+            <div class="column">
+                <form class="ui form" method="post" action="/register/" />
+                <div class="field">
+                    <h2>Registrar</h2>
+                    <div class="ui left icon input">
+                        <input name="nome" placeholder="Nome" type="text">
+                        <i class="lock icon"></i>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui left icon input">
+                        <input name="email" placeholder="Email" type="text">
+                        <i class="user icon"></i>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui left icon input">
+                        <input name="pass" placeholder="Senha" type="password">
+                        <i class="lock icon"></i>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui left icon input">
+                        <input name="confirmpass" placeholder="Repetir Senha" type="password">
+                        <i class="lock icon"></i>
+                    </div>
+                </div>
+                <div class="field">
+                    <select class="ui search dropdown" name="tipo">
+                        <option value="">Eu sou </option>
+                        <option value="aluno">Aluno</option>
+                        <option value="professor">Professor</option>
+                    </select>
+                </div>
+                <input type="submit" class="ui blue submit button" value="Registrar" />
+                <h4><a> Já sou registrado </a></h4>
+                </form>
+            </div>
+            <div class="ui vertical divider">OU</div>
+            <div class="center aligned column">
+                <h2>voce pode registrar tambem com</h2>
+                <button class="ui large facebook button"><i class="facebook icon"></i> Facebook </button>
+                <button class="ui large  google plus button"><i class="google plus icon"></i> Google Plus </button>
+                <button class="ui large linkedin button"><i class="linkedin icon"></i> LinkedIn </button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

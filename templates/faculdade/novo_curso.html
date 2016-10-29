@@ -1,0 +1,54 @@
+{% extends "faculdade/base.html" %}
+{% block content %}
+    <div id="centro">
+    <div class="six wide column">
+        <div class="row">
+            <h4>Cadastro de Curso</h4>
+            <div class="ui padded segment">
+                <div class="ui form">
+                    <h4 class="ui dividing header">Nome</h4> 
+                    <input id="nome-curso" placeholder="Nome" type="text">
+
+                    <h4 class="ui divinding header">Descrição</h4>
+                    <textarea id="descricao-curso" style="resize:none;"row="2"></textarea>
+                    <h4 class="ui divinding header">Tipo</h4>
+		<div class="fields">
+		    <div class="thirteen wide field">
+                    <select id="tipos-curso" class="ui dropdown">
+                        <option value="" selected >Selecione um Tipo de Curso</option>
+                    </select>
+		    </div>			
+		    <div class="two wide field">
+		    	<button id="cadastrar-tipo-curso" class="ui right button">Novo</button> 
+		    </div>
+		</div>
+		<h4 class="ui dividing header">Duração</h4> 
+		<div class="inline fields">
+		    <div class="twelve wide field">
+                <input id="qtd-modulos" placeholder="6" type="text">
+		    </div>			
+		    <div class="two wide field">
+		    	<label>Modulos/Semestres</label>
+		    </div>
+		</div>
+
+
+                <h4 class="ui divinding header">Area</h4>
+		<select id="area-curso" class="ui fluid dropdown">
+                        <option value="" selected>Selecione uma Area</option>
+                    </select>
+
+                    <h4 class="ui dividing header">Disciplinas</h4>
+                    <select id="disciplinas-curso" multiple="" class="ui fluid dropdown">
+                        <option value="" selected >Selecione uma Area para carregar as disciplinas</option>
+                    </select>
+                    <br/>
+                    <div class="ui center aligned container"> <button id="cadastrar-curso" class="ui green button">Salvar</button> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<script type="text/javascript" src="/static/js/faculdade/cad-cursos.js"></script>
+{% endblock %}

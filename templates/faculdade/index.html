@@ -1,0 +1,51 @@
+{% extends "faculdade/base.html" %}
+{% block content %}
+      <div id="centro">
+    <div class="eight wide column">
+        <div  class="row">
+            <div  class="ui segment">
+                <label>Turmas</label>
+                <table class="ui celled padded unstackable table">
+                    <thead>
+                        <tr><th class="single line">Turma</th><th>Curso</th><th>Periodo</th><th>Data de Inicio</th><th>Data de Fim</th></tr>
+                        {% for t in turmas %}
+                        <tr><td>{{t.Turmas.id}}</td><td>{{t.Cursos.nome}}</td><td>{{t.Periodos.nome}}</td><td>{{t.Turmas.data_inicio}}</td><td>{{t.Turmas.data_fim}}</td></tr>
+                        {% endfor %}
+                    </thead>
+                </table>
+            </div> 
+
+            <div class="ui segment">
+                <label>Cursos</label>
+                <table class="ui celled padded unstackable table">
+                    <thead>
+                        <tr><th class="single line">Código</th><th>Disciplina</th><th>Data de Entrega</th><th>Assunto</th><th>Nota</th></tr>
+                        <tr><td>6532</td><td>Aplicação para Web</td><td>10/09/2015</td><td>Python para Web</td><td>10</td></tr>
+                    </thead>
+                </table>
+            </div>
+
+            <div class="ui segment">
+                <label>Professores</label>
+                <table class="ui celled padded unstackable table">
+                    <thead>
+                        <tr><th class="single line">Código</th><th>Disciplina</th><th>Media</th><th>Ano</th></tr>
+                        <tr><td>6532</td><td>Aplicação para Web</td><td>0</td><td>2015</td></tr>                       
+                    </thead>
+                </table>
+            </div>
+
+            <div class="ui segment">
+                <label>Faltas</label>			
+                <table class="ui celled padded  unstackable table">
+                    <thead></thead>
+                    <tr><th class="sigle line">Código</th><th>Disciplina</th><th>Faltas</th><th>Percentual de Presença</th></tr>
+                    <tr><td>6532</td><td>Aplicação para Web</td><td>0</td><td>100%</td></tr>                  
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}

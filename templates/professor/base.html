@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>UniSocial</title>
+    <link rel="stylesheet" type="text/css" href="/static/semantic/dist/semantic.min.css"></script>
+     <script src="/static/js/jquery.js"></script>
+    <script src="/static/semantic/dist/semantic.min.js"></script>
+         <meta name="viewport" content="width = device-width,user-scalable = no,initial-scale=0.6,maximum-scale=1.0,minimum-scale=0.1">
+     <style type="text/css">
+  @media screen and (max-width: 1059px){div#menu{display: none;}div#centro{ left:40%;right:40%;width:600px;}a#feed{display: block;}}
+ @media screen and (min-width: 1060px){a#feed{display: none;}div#centro{width: 800px; }}
+ </style>
+</head>
+<div class="ui secondary  menu">
+    <a href="/professor" class="active item">Home </a>
+    <a class="item">Messages </a>
+    <a class="item">Amigos </a>
+    <div class="right menu">
+        <div class="item"></div>
+        <a class="ui item">Sair </a>
+    </div>
+</div>
+<div class="ui seven item labeled icon menu">
+    <a href="/professor/cursos" class="blue item"><i class="book icon"></i> Cursos </a>
+    <a href="/professor/turmas" class="violet item"><i class="users icon"></i> Turmas </a>
+    <a href="/professor/notas"class="item"><i class="calendar icon"></i> Notas </a>
+    <a href="/professor/trabalhos"class="item"><i class="book icon"></i> Trabalhos </a>
+    <a href="/professor/grupos" class="blue item"><i class="building outline icon"></i> Grupos </a>
+    <a href="/professor/cadastroP" class="red item"><i class="settings icon"></i> cadastro </a>
+    <a href="#" class="red item"><i class="checkmark icon"></i> Chamada </a>
+
+</div>
+<body>
+    <div class="ui three column grid">
+    <div id="menu" class="three wide column">
+        <div class="ui segment">
+  <div class="ui card">
+  <a class="image" href="#">
+    <img id="foto-aluno" src="/static/imagens/alunos/1.jpg">
+  </a>
+  <div class="content">
+    <a class="header" href="#" id="nome-aluno"></a>
+    <div class="meta">
+      <a id="professor-email">Email: alisson.machado@unisocial.com.br</a>
+    </div>
+  </div>
+ </div>
+ <div class="ui fluid secondary vertical pointing menu">
+  <a class="active item"> <i class="user icon"></i> Perfil </a>
+  <a class="item"> <i class="calendar icon"></i> Calendario </a>
+  <a class="item"> <i class="alarm icon"></i> Alertas </a>
+</div>
+</div>
+</div>
+    {% block content %}
+
+    {% endblock %}
+     <div style="height:100px;">
+    </div>
+<script type="text/javascript">
+$(function(){
+  $('.ui.dropdown')
+    .dropdown()
+  ;
+});
+</script>
+</body>
+</html>

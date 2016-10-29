@@ -1,0 +1,24 @@
+{% extends "faculdade/base.html" %}
+{% block content %}
+  <div id="centro">
+    <div class="six wide column">
+        <h4>Cadastro de Disciplinas</h4>
+        <div class="ui padded segment">
+            <div class="ui form">
+                <h4 class="ui dividing header">Nome</h4> 
+                <input id="nome-disciplina" placeholder="Nome" type="text">
+                <h4 class="ui dividing header">Descrição</h4>
+                <textarea id="descricao-disciplina" style="resize:none;" row="2"></textarea>
+                <h4 class="ui dividing header">Areas</h4>
+                <select id="areas-disciplina" multiple="" class="ui fluid dropdown">
+                    <option value="" selected>Escolha a Area</option>
+                </select>
+                <br/>
+                <div class="ui center aligned container"> <button id="cadastrar-disciplina" class="ui green button">Salvar</button></div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<script type="text/javascript" src="/static/js/faculdade/cad-disciplinas.js"></script>
+{% endblock %}

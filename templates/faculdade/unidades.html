@@ -1,0 +1,103 @@
+{% extends "faculdade/base.html" %}
+{% block content %}
+    <div id="centro">
+    <div class="eight wide column">
+        <span><a href="/faculdade/unidades/novo/"</a><button class="ui button"> <i class=" plus green icon"> </i>Nova Unidade </button></a></span>
+        <table class="ui celled unstackable padded table">
+            <thead>
+                <tr><th class="single line"> Código</th><th>Nome</th><th>Turmas</th><th>Ações</th></tr>
+                {% for u in unidades %}
+                <tr><td>{{ u.Unidades.id }}</td><td>{{ u.Unidades.nome }}</td><td>{{u[2]}}</td><td><button id="{{u.Unidades.id}}" class="ui blue button btn-editar-unidade">Editar </button> <button id="{{u.Unidades.id}}"class="ui red button btn-excluir-unidade">Excluir</button></td>
+                    {% endfor %}
+            </thead>
+        </table>
+    </div>
+    </div>
+</div>
+
+
+<div id="editar-unidade-modal" class="ui first coupled modal">
+  <div class="header">
+    Editar Turma
+  </div>
+  <div class="content">
+		<div class="ui four column  grid">
+			<div class="column">
+			  <div class="ui vertical menu">
+				  <div class="item">
+					<div class="header" id="unidade-nome">Unidade: Vazio</div>
+					<div class="menu">
+					  <a class="item" id="unidade-id">ID: Vazip</a>
+                      <a class="item" id="unidade-endereco">ID: Vazip</a>
+					</div>
+				  </div>
+			   </div>
+			</div>
+			<div class="column">
+				<div class="ui vertical menu">
+                <div class="item">
+                <div class='header'>Areas</div>
+                     <div  id="areas-itens"  class="menu">
+				    </div>
+				</div>
+                </div>
+			</div>
+			<div class="column">
+			   <div class="ui vertical menu">
+                <div class="item">
+                <div class='header'>Cursos</div>
+				<div class="menu" id="cursos-itens">
+				</div>
+                </div>
+			   </div>
+             </div>
+	      </div>	  
+    <br/>
+<button id=""class="ui green button btn-alterar-unidade">Alterar Dados</button>
+<button id=""class="ui orange button btn-incluir-curso-unidade">Adicionar Curso</button>
+  </div>
+
+  <div class="actions">
+    <div class="ui black deny button">
+      Cancelar
+    </div>
+    <div class="ui positive icon button">
+      Salvar
+    </div>
+  </div>
+</div>
+
+<div id="adicionar-curso-unidade-modal" class="ui  small second coupled modal ">
+  <div class="header">
+    Cursos da Instituição
+  </div>
+  <div class="content">
+      <div class="ui grid">
+          <div class="four wide column">
+            <div class="ui vertical fluid tabular menu" id="areas-faculdade-tab">
+            
+            </div>
+          </div>
+          <div class="twelve wide stretched column">
+            <div class="ui segment" id="cursos-area-clicada">
+                <div class="ui vertical fluid tabular menu" id="areas-faculdade-tab">
+                    <div class="ui celled middle aligned list" id="lista-cursos-area">
+                      
+                    </div>            
+                </div>
+            </div>
+          </div>
+        </div>
+  </div>
+  <div class="actions">
+    <div class="ui black deny button">
+      Cancelar
+    </div>
+    <div class="ui positive button">
+      Salvar
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="/static/js/faculdade/main-unidades.js"></script>
+{% endblock %}

@@ -1,0 +1,104 @@
+{% extends "faculdade/base.html" %}
+{% block content %}
+    <div id="centro">
+    <div class="eight wide column">
+        <span><a href="/faculdade/cursos/novo/"</a><button class="ui button"> <i class=" plus green icon"> </i>Novo Curso </button></a></span>
+			{% for c in cursos %}
+			<div class="ui middle celled aligned divided list">
+			  <div class="item">	
+			  
+					<div class="right floated content">
+				 	 <button id="{{c.Cursos.id}}" class="ui blue tiny button btn-editar-curso">Editar</button>
+					 <button id="{{c.Cursos.id}}" class="ui red tiny button btn-excluir-curso">Excluir</button>
+					</div>					
+					<div class="content">			
+						<a class="ui black horizontal label">Curso: {{ c.Cursos.id }}</a>
+						<a class="ui orange horizontal label">Area: {{c.Areas.nome}}</a>						 
+				 	</div>
+					<br/>
+					{{ c.Cursos.nome }}
+			  </div> 			  
+			</div>
+             {% endfor %}
+    </div>
+    </div>
+</div>
+
+
+<div id="editar-curso-modal" class="ui long first coupled modal">
+  <div class="header">
+    Editar Curso
+  </div>
+  <div class="content">
+		<div class="ui top attached tabular menu">
+			  <a class="active item nome-curso">
+				Análise de Sistemas
+			  </a>
+			</div>
+			<div class="ui bottom attached segment">
+				<div class="ui grid">
+				  <div class="twelve wide column">
+					<div class="ui vertical fluid tabular menu">
+					  <p class="area-curso">Área: Exatas</p>
+					  <p class="tipo-curso">Tipo: Tecnologo</p>
+					  <p class="modulos-curso">Duração: 8 Modulos/Semestres</p>
+					</div>
+				  </div>
+				  <div class="four wide stretched column">
+     				  <div class="ui secondary vertical menu">
+						  <a class="item">
+							<i class="plus green icon"></i>Adicionar Disciplina
+						  </a>
+						 <a class="item">
+							<i class="plus green icon"></i>Adicionar Modulo
+						  </a>
+						</div>
+				  </div>
+				</div>
+			 <input type="hidden" id="curso-selecionado" value="" />				
+			</div>
+	 <br/>
+	  <div class="ui four column  grid lista-modulos">			
+		<!-- Preenchido por jquery -->			
+	  </div>
+  <input type="hidden" id="modulo-id" value="">  
+  </div>
+  <div class="actions">
+    <div class="ui black deny button">
+      Fechar
+    </div>
+  </div>
+</div>
+
+
+<div id="adicionar-aluno-turma-modal" class="ui long second coupled  modal">
+  <div class="header">
+    Disciplinas
+  </div>
+  <div class="content">
+      <div class="ui search">
+		  <div class="ui icon input">
+			<input type="hidden" value="" id="turma-clicada-id">
+			<input class="prompt nome-aluno-buscar" type="text" size="85" placeholder="Digite aqui o nome da disciplina">
+			<i class="search icon"></i>
+		  </div>
+		  <div class="results"></div>
+	   </div>
+	  <div class="ui celled list lista-todas-disciplinas">
+		 <div class='item'>			
+		 </div>
+	  </div>
+  </div>
+  <div class="actions">
+    <div class="ui black deny button">
+      Cancelar
+    </div>
+    <div class="ui positive right labeled icon button">
+      Salvar
+      <i class="checkmark icon"></i>
+    </div>
+  </div>
+</div>
+<script type="text/javascript" src="/static/js/faculdade/main-cursos.js"></script>
+{% endblock %}
+

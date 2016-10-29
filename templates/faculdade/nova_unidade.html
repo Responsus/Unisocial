@@ -1,0 +1,29 @@
+{% extends "faculdade/base.html" %}
+{% block content %}
+    <div id="centro">
+    <div class="six wide column">
+        <div class="row">
+            <h4>Cadastro de Unidade</h4>
+            <div class="ui padded segment">
+                <div class="ui form">
+                    <h4 class="ui dividing header">Nome</h4>
+                    <input id="nome-unidade" placeholder="Nome" type="text">
+                    <h4 class="ui dividing header">Endereço</h4>
+                    <input id="endereco-unidade" placeholder="Endereço" type="text">
+                    <h4 class="ui dividing header">Descriçao</h4>
+                    <textarea id="descricao-unidade" style="resize:none;" row="2"></textarea>
+                    <h4 class="ui dividing header">Areas</h4>
+                    <select id="areas" name="skills" multiple="" class="ui fluid dropdown">
+                    </select>
+                    <h4 class="ui dividing header">Cursos</h4>
+                    <select id="cursos" name="skills" multiple="" class="ui fluid dropdown">
+                    </select>
+                    <br/>
+                    <br/>
+                    <div class="ui center aligned container"> <button  id="cadastrar-unidades" class="ui center aligned green button" type="submit">Salvar</button> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script type="text/javascript" src="/static/js/faculdade/cad-unidade.js"></script>
+{% endblock %}

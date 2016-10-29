@@ -1,0 +1,45 @@
+{% extends "faculdade/base.html" %}
+{% block content %}
+     <div id="centro">
+    <div class="six wide column">
+        <div class="row">
+            <h4>Cadastro de Turma</h4>
+            <div class="ui padded segment">
+                <div class="ui form">
+                    <h4 class="ui dividing header">Unidade</h4>
+                    <select id="unidade" name="skills"  class="ui fluid dropdown">
+					    <option selected="selected" disabled>Selecione uma unidade</option>
+                    </select>
+                    <h4 class="ui dividing header">Area</h4>
+                    <select id="area" name="skills"  class="ui fluid dropdown">
+					    <option selected="selected">Selecione uma area</option>
+                    </select>
+                    <h4 class="ui dividing header">Curso</h4>
+                    <select id="curso" name="skills" class="ui fluid dropdown">
+    					<option selected="selected">Selecione um curso</option>
+                    </select>
+                    <h4 class="ui dividing header">Período</h4>
+                    <select id="periodo" name="skills" class="ui fluid dropdown">
+    					<option selected="selected">Selecione um periodo</option>
+                    </select>
+                    <h4 class="ui dividing header">Módulo</h4>
+                    <select id="modulo" name="skills" class="ui fluid dropdown">
+    					<option selected="selected">Selecione um modulo</option>
+                    </select>
+                    <h4 class="ui dividing header">Data de Início</h4>
+                    <input class="data"id="data-inicio" placeholder="00/00/0000" type="text">
+                    <h4 class="ui dividing header">Data de Término</h4>
+                    <input class="data" id="data-fim" placeholder="00/00/0000" type="text">
+                    <h4 class="ui dividing header">Quantidade de alunos</h4>
+                    <input id="qtdalunos" placeholder="Quantidade de alunos" type="text">
+                    <br/>
+                    <br/>
+                    <div class="ui center aligned container"> <button id="cadastrar-turmas" class="ui  green button" type="submit">Salvar</button> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+    <script type="text/javascript" src="/static/js/faculdade/cad-turmas.js"></script>
+    {% endblock %}

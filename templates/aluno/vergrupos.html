@@ -1,0 +1,125 @@
+{% extends "aluno/base.html" %}
+{% block content %}   
+    <div class="ui modal">
+  <i class="close icon"></i>
+  <div class="header">
+    Modal Title
+  </div>
+  <div class="image content">
+    <div class="image">
+      An image can appear on left or an icon
+    </div>
+    <div class="description">
+      A description can appear on the right
+    </div>
+  </div>
+  <div class="actions">
+    <div class="ui button">Cancel</div>
+    <div class="ui button">OK</div>
+  </div>
+</div>
+<script type="text/javascript">
+$('.ui.modal')
+  .modal()
+;
+</script>
+<div class="eight wide column">
+    <div class="eight wide  column">
+        <div class="row">
+            <div class="ui padded center aligned segment">
+                <h4 class="ui header">Integrantes do Grupos</h4>
+               <a class="ui blue image label"><img src="/static/imagens/alunos/1.jpg"> Jose Benedito <div class="detail">Lider</div>
+                </a>
+                <a class="ui teal image label"><img src="/static/imagens/alunos/3.jpg"> Maria Silva </a>
+                <a class="ui yellow image label"><img src="/static/imagens/alunos/2.jpg"> Mario Leite </a>
+                <button class="ui icon button">
+                    <i class="add user icon"></i>
+                </button>
+            </div>
+            <div class="ui piled padded segment">
+                <div class="ui comments">
+                    <div class="ui blue  padded segment">
+                        <div class="comment">
+                            <a class="avatar">
+                                <img src="/static/imagens/alunos/1.jpg">
+                            </a>
+                            <div class="content">
+                                <a class="author">Alisson Menezes</a>
+                                <div class="metadata">
+                                    <div class="date">2 dias atrás</div>
+                                </div>
+                                <div class="text">Ola pessoal,Proxima prova sera dia 10/09 <a class="ui red tag label">novo</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui comments">
+                    <div class="ui yellow  padded segment">
+                        <div class="comment">
+                            <a class="avatar">
+                                <img src="/static/imagens/alunos/2.jpg">
+                            </a>
+                            <div class="content">
+                                <a class="author">Alisson Menezes</a>
+                                <div class="metadata">
+                                    <div class="date">2 dias atrás</div>
+                                </div>
+                                <div class="text">Proximo dia 10/5 nao havera aula</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui form">
+                <div class="field">
+                    <label>Postar</label>
+                    <textarea style="resize:none;"></textarea>
+                </div>
+                <button class="ui green button">Postar</button>
+                <div class="ui action input">
+                    <button class="ui teal right labeled icon button"><i class="copy icon"></i> Anexar </button>
+                </div>
+            </div>
+        </div> 
+    </div>
+</div> 
+    <div class="five wide column">
+        <div class="ui segment">
+            <h1>Termino do Trabalho</h1>
+        </div>
+        <div class="ui card">
+            <div class="content">
+                <div class="header">Aquivos Dos Trabalho</div>
+                <div class="meta">
+                    <span class="right floated time">2 dias atrás</span>
+                    <span class="category">PDF</span>
+                </div>
+                <div class="description">
+                    <p>Ola pessoal estou deixando o link do trabalho
+                        http://localhost:5000/alunos/grupos/1/
+                    </p>
+                </div>
+            </div>
+            <div class="extra content">
+                <div class="right floated author"><img class="ui avatar image" src="/static/imagens/alunos/1.jpg"> Alisson </div>
+            </div>
+        </div>
+        <div class="ui cards">
+  <div class="card">
+    <div class="content">
+      <img class="right floated mini ui image" src="/static/imagens/alunos/1.jpg">
+      <div class="header">Alisson </div>
+      <div class="meta">RA:1551005555 </div>
+      <div class="description">Alisson Solicitou um pedido de grupo </div>
+    </div>
+    <div class="extra content">
+      <div class="ui two buttons">
+        <div class="ui basic green button">Aprovar</div>
+        <div class="ui basic red button">Rejeitar</div>
+      </div>
+    </div>
+  </div>
+    </div>
+</div>
+
+{% endblock %}

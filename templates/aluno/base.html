@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>UniSocial</title>
+        <link rel="stylesheet" type="text/css" href="/static/semantic/dist/semantic.min.css"></script>
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/semantic/dist/semantic.min.js"></script>
+     <meta name="viewport" content="width = device-width,user-scalable = no,initial-scale=0.6,maximum-scale=1.0,minimum-scale=0.1">
+     <style type="text/css">
+  @media screen and (max-width: 1059px){div#menu{display: none;}div#centro{ left:40%;right:40%;width:600px;}a#feed{display: block;}}
+ @media screen and (min-width: 1060px){a#feed{display: none;}div#centro{width: 800px; }}
+ </style> 
+</head> 
+<div class="ui secondary menu">
+    <a href="/aluno" class="item">Home </a>
+    <a class="item">Messages </a>
+    <a class="item">Meus Dados</a>
+    <div class="right menu">
+        <a id="feed"class="ui item"> <i class="sidebar icon"> </i> menu <a/>
+        <a href="/logout/aluno" class="ui item">Sair </a>    
+           <div class="ui right demo vertical inverted sidebar labeled icon menu">
+
+    <a href="/aluno/notas"  class="item">
+      <i class="calendar icon"></i> 
+      Notas
+    </a>
+    <a  href="/aluno/trabalhos" class="item">
+      <i class="book icon"></i> 
+      Trabalhos
+    </a>
+    <a href="/aluno/historico" class="item">
+       <i class="student icon"></i> 
+        Historico
+    </a>
+    <a href="/aluno/grade" class="item">
+    <i class="block layout icon"></i> 
+        Grade
+    </a>
+    <a href="/aluno/grupos"  class="item">
+       <i class="users icon"></i> 
+       Grupos
+    </a>
+    <a href="/aluno/forum" class="item">
+     <i class="folder icon"></i> 
+      Forum
+    </a>
+    </div>  
+    </div>
+</div>
+<div class="stick">
+    <div id="menu" class="ui six item labeled icon  menu">
+        <a href="/aluno/notas" class="red item"><i class="calendar icon"></i> Notas </a>
+        <a href="/aluno/trabalhos" class="red item"><i class="book icon"></i> Trabalhos </a>
+        <a href="/aluno/historico" class="red item"><i class="student icon"></i> Historico </a>
+        <a href="/aluno/grade" class="red item"><i class="block layout icon"></i> Grade </a>
+        <a href="/aluno/grupos" class="red item"><i class="users icon"></i> Grupo </a>
+        <a href="/aluno/forum" class="red item"><i class="folder icon"></i> Forum </a>
+    </div>
+</div>
+<body>
+    <br/>
+<div class="ui three column grid">
+    <div id="menu" class="three wide column">
+        <div class="ui segment">
+  <div class="ui card">
+  <a class="image" href="#">
+    <img id="foto-aluno" src="/static/imagens/alunos/{{aluno.id}}.jpg">
+  </a>
+<a class="ui top left attached label" id="alterar-foto">Alterar Foto</a>
+  <div class="content">
+    <a class="header" href="#" id="nome-aluno">{{aluno.nome}}</a>
+    <div class="meta">  
+      <a id="email-aluno">Email: {{aluno.email}}</a></br>
+      <a id="celular-aluno">Celular: {{aluno.celular}}</a>
+    </div>
+  </div>
+ </div>
+ <div class="ui fluid secondary vertical pointing menu">
+  <a class="active item"> <i class="user icon"></i> Perfil </a>
+  <a class="item"> <i class="calendar icon"></i> Calendario </a>
+  <a class="item"> <i class="alarm icon"></i> Alertas </a>
+</div>
+</div>
+</div>
+    {% block content %}
+
+    {% endblock %}
+     <div style="height:100px;">
+    </div>  
+    
+</div> 
+
+
+<div class="ui modal">
+  <i class="close icon"></i>
+  <div class="header">
+    Foto de Perfil
+  </div>
+  <div class="image content">
+    <div class="ui medium image">
+      <img src="/static/imagens/alunos/{{aluno.id}}.jpg">
+    </div>
+    <form id="form-foto "type="post" enctype="multipart/form-data">
+    <div class="description">
+      <div class="ui header">Faça o upload de uma foto</div>
+      <p>Selecione uma foto do seu computador.</p>
+      <p><input id="foto-perfil" type="file" size="45" /></p>
+    </div>
+    </form>
+  </div>
+  <div class="actions">
+    <div class="ui black deny button">
+      Cancelar
+    </div>
+    <div id="enviar-foto" class="ui positive right labeled icon button">
+      Salvar
+      <i class="checkmark icon"></i>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+    $('.ui.sidebar').sidebar({overlay: true})
+      .sidebar('attach events','#feed');
+    ;
+
+    $("#alterar-foto").click(function(){
+        $('.ui.modal')
+          .modal('show')
+        ;
+    });
+
+    $("#enviar-foto").click(function(){
+        arquivo = $("#foto-perfil")[0].files[0];
+        data = new FormData();
+        data.append("foto-perfil",arquivo);
+        $.ajax({
+            url: "/aluno/perfil/foto/",
+            type: "POST",
+            contentType: false,
+            processData: false,
+            data: data,
+        })
+        .done(function(data){
+            alert(data.message);   
+            location.reload();  
+        })
+        .fail(function(data){
+            alert(data.message);
+        })
+    });
+
+});
+</script>
+</body>
+</html>

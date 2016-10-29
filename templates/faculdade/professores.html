@@ -1,0 +1,31 @@
+{% extends "faculdade/base.html" %}
+{% block content %}
+    <div id="centro">
+    <div class="eight wide column">
+  <span><a href="/faculdade/professores/novo/"</a><button class="ui button"> <i class=" plus green icon"> </i>Novo Professor</button></a></span>
+        <h4 class="ui header">Contratados</h4>
+        <div class="ui segment">
+            <table class="ui celled unstackable padded table">
+                <thead>
+                    <tr><th class="single line">Código</th><th>Nome</th><th>Turmas</th><th>Área</th><th></th></tr>
+                {% for p in professores%}
+                    <tr><td>{{p.id}}</td><td>{{p.nome}}</td><td>3</td><td>{{p.areas.nome}}</td><td>Curriculo</td></tr>
+                {% endfor %}
+                </thead>
+            </table>
+        </div>
+        <h4 class="ui header">Disponíveis</h4>
+        <div class="ui segment">
+            <table class="ui celled unstackable padded table">
+                <thead>
+                    <tr><th class="single line">Código</th><th>Nome</th><th>Turmas</th><th>Área</th><th></th></tr>
+                    <tr><td></td><td></td><td>3</td><td>Tecnologia</td><td>Curriculo</td></tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+    <div class="four wide column">
+    </div>
+</div>
+{% endblock %}

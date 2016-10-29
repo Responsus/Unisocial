@@ -1,0 +1,86 @@
+{% extends "aluno/base.html" %}
+{% block content %}   
+    <div id="centro">
+    <div class="five wide column">
+        <div class="row">
+            <div class="ui segment">
+                <div class="ui raised segment">
+                    <div class="ui comments">
+                        <div class="comment">
+                            <a class="avatar">
+                                <img src="/static/imagens/faculdades/responsus.png">
+                            </a>
+                            <div class="content">
+                                <a class="author">Professor/Faculdade</a>
+                                <div class="metadata">
+                                    <div class="date">2 dias atrás</div>
+                                </div>
+                                <div class="text">Ola pessoal,Proxima prova sera dia 10/09</div>
+                            </div>
+                        </div>
+                    </div>                   
+                </div>
+            </div>
+            <div class="ui segment">
+				{% if faculdade.count() < 1 %}
+					<h4>Você não está fazendo nenhum curso</h4>
+				{% endif %}
+                <table class="ui celled unstackable padded table">
+                <th>Instituição</th><th>Turma</th><th>Curso</th><th>Semestre/Modulo</th></tr>
+				{% for f in faculdade %}  
+					<tr><td><b>{{f.Faculdades.nome}}</b></td><td>{{f.Turmas.id}}</td><td><a href="/aluno/curso/{{f.Cursos.id}}/">{{f.Cursos.nome}}</a></td><td></td></tr>
+				{% endfor %}
+                </table>
+            </div>
+        </div>
+        <div class="ui segment">
+            <h4 class="ui header">Trabalhos</h4> 
+            <table class="ui celled unstackable padded table">
+                <thead>
+                    <tr><th class="single line">Código</th><th>Disciplina</th><th>Data de Entrega</th><th>Assunto</th><th>Nota</th></tr>
+                    <tr><td>6532</td><td>Aplicação para Web</td><td>10/09/2015</td><td>Python para Web</td><td>10</td></tr>                   
+                </thead>
+            </table>
+        </div>
+        <div class="ui segment">
+            <h4 class="ui header">Notas</h4> 
+            <table class="ui celled unstackable padded table">
+                <thead>
+                    <tr><th class="single line">Código</th><th>Disciplina</th><th>Media</th><th>Ano</th></tr></tr>
+                    <tr><td>6532</td><td>Aplicação para Web</td><td>0</td><td>2015</td></tr>                   
+                </thead>
+            </table>
+        </div>
+        <div class="ui segment">
+            <h4 class="ui header">Faltas</h4> 
+            <table class="ui celled unstackable padded table">
+                <thead>
+                    <tr><th class="single line">Código</th><th>Disciplina</th><th>Faltas</th><th>Percentual de Presença</th><tr>
+                    <tr><td>6532</td><td>Aplicação para Web</td><td>0</td><td>100%</td></tr>                    
+                </thead>
+            </table>
+        </div>  
+    </div> 
+    </div>           
+    <div id="menu" class="three wide column">
+        <div class="ui  segment">
+            <h4 class="ui header">Alunos</h4> 
+            <div class="ui raised segment">
+                <!-- {% for i in alunos %}
+                <span>
+                    <div class="ui middle aligned animated list">
+                        <div class="item">
+                            <img class="ui avatar image" src="/static/imagens/alunos/{{a.id}}.jpg">
+                            <div class="content">
+                                <div class="header">{{a.nome}}</div>
+                                </span>
+                            </div>
+                        </div>                                              
+                    </div>
+                </span>
+                {% endfor %} -->
+            </div>
+        </div>
+    </div> 
+</div>
+{% endblock %}

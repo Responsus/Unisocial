@@ -1,0 +1,80 @@
+{% extends "faculdade/base.html" %}
+{% block content %}
+    <div id="centro">
+    <div class="six wide column">
+        <h4>Cadastro de Professores</h4>
+        <div class="ui padded segment">
+            <div class="ui form">
+                <h4 class="ui dividing header">Nome</h4> 
+                <input id="professor-nome" placeholder="Nome" type="text">
+                <h4 class="ui dividing header">Email</h4>
+                <div class="field">
+                <input id="professor-email" class="ui dividing header" placeholder="Email" name="email" type="text" >
+                </div>
+                <h4 class="ui dividing header">RG</h4> 
+                <input id="professor-rg" placeholder="99.999.999-9" type="text">
+                <h4 class="ui dividing header">CPF</h4> 
+                <input id="professor-cpf" placeholder="000.000.000-00" type="text">
+                <h4 class="ui dividing header">Celular</h4> 
+                <input id="professor-celular" placeholder="(11) 99999-0000" type="text">
+                <h4 class="ui dividing header">Telefone</h4> 
+                <input id="professor-telefone" placeholder="(11) 4545-4545" type="text">
+                <h4 class="ui dividing header">Facebook</h4> 
+                <input id="professor-facebook" placeholder="http://facebook.com/professor.face" type="text">
+                <h4 class="ui dividing header">Senha</h4>
+                <div class="field">
+                <input id="professor-senha" placeholder="Digite uma senha" type="password" name="password">
+                </div> 
+                <h4 class="ui dividing header">Áreas</h4>
+                <select id="professor-areas" name="skills"  multiple="" class="ui fluid dropdown">
+				    <option selected="selected">Selecione as Áreas</option>
+                {% for a in areas %}
+				    <option value="{{a.Areas.id}}">{{a.Areas.nome}}</option>
+                {% endfor %}
+                </select>
+                <h4 class="ui dividing header">Disciplinas</h4>
+                <select id="professor-disciplinas" name="skills"  multiple="" class="ui fluid dropdown">
+				    <option selected="selected">Selecione as Disciplinas</option>
+                {% for d in disciplinas %}
+				    <option value="{{d.Disciplinas.id}}">{{d.Disciplinas.nome}}</option>
+                {% endfor %}
+                </select>
+                <br/>
+                <br/>
+                <div  lass="ui center aligned container"><button id="cadastrar-professor" class="ui green button " type="submit">Salvar</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<script type="text/javascript" src="/static/js/faculdade/cad-professor.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      $('.ui.form').form({    
+        email: {
+          identifier: 'email',
+          rules: [
+            {
+              type : 'email',
+              prompt : 'Entre com o seu e-mail'
+            }
+          ]
+        },       
+        password: {
+          identifier: 'password',
+          rules: [
+            {
+              type : 'empty',
+              prompt : 'Entre com a sua senha'
+            }
+          ]
+        },
+      }, {
+        on: 'blur',
+        inline: 'true'
+      });
+    });
+  </script>
+
+{% endblock %}

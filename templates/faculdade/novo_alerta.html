@@ -1,0 +1,25 @@
+{% extends "faculdade/base.html" %}
+{% block content %}
+    <div id="centro">
+    <div class="six wide column">
+        <h4>Cadastro de Alertas</h4>
+        <div class="ui padded segment">
+            <div class="ui form">
+                <h4 class="ui dividing header">Nome</h4> 
+                <input name="alerta.nome" placeholder="Nome" type="text">
+                <h4 class="ui dividing header">Conteudo</h4> 
+                <textarea id="alerta.conteudo" style="resize:none;" rows="4"></textarea>
+                <h4 class="ui dividing header">Data de  Inicio</h4> 
+                <input class="data" name="alerta.inicio" placeholder="inicio" type="text">
+                <h4 class="ui dividing header">Data de Fim</h4> 
+                <input class="data" name="alerta.fim" placeholder="Fim" type="text">
+                <br/>
+                <br/>
+                <div class="ui center aligned container"><button button id="cadastrar-alerta" class="ui green button">Salvar</button></div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<script type="text/javascript" src="/static/js/alerta.js"></script>
+{% endblock %}

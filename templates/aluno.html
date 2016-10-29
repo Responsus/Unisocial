@@ -1,0 +1,159 @@
+{% extends "/base.index.html" %}
+{% block content %}
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1707256602827964',
+      xfbml      : true,
+      version    : 'v2.4'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+
+
+
+
+  // This is called with the results from from FB.getLoginStatus().
+  function statusChangeCallback(response) {
+    console.log('statusChangeCallback');
+    console.log(response);
+    // The response object is returned with a status field that lets the
+    // app know the current login status of the person.
+    // Full docs on the response object can be found in the documentation
+    // for FB.getLoginStatus().
+    if (response.status === 'connected') {
+      // Logged into your app and Facebook.
+       window.location.href = "http://unisocial.responsus.com.br/aluno";
+    } else if (response.status === 'not_authorized') {
+      // The person is logged into Facebook, but not your app.
+      document.getElementById('status').innerHTML = 'Please log ' +
+        'into this app.';
+    } else {
+      // The person is not logged into Facebook, so we're not sure if
+      // they are logged into this app or not.
+	alert("Você nao esta logado no facebook");
+    }
+  }
+
+  // This function is called when someone finishes with the Login
+  // Button.  See the onlogin handler attached to it in the sample
+  // code below.
+  function checkLoginState() {
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+    });
+  }
+
+  window.fbAsyncInit = function() {
+  FB.init({
+    appId      : '1707256602827964',
+    cookie     : true,  // enable cookies to allow the server to access 
+                        // the session
+    xfbml      : true,  // parse social plugins on this page
+    version    : 'v2.2' // use version 2.2
+  });
+
+  // Now that we've initialized the JavaScript SDK, we call 
+  // FB.getLoginStatus().  This function gets the state of the
+  // person visiting this page and can return one of three states to
+  // the callback you provide.  They can be:
+  //
+  // 1. Logged into your app ('connected')
+  // 2. Logged into Facebook, but not your app ('not_authorized')
+  // 3. Not logged into Facebook and can't tell if they are logged into
+  //    your app or not.
+  //
+  // These three cases are handled in the callback function.
+
+  FB.getLoginStatus(function(response) {
+   // statusChangeCallback(response);
+  });
+
+  };
+
+  // Load the SDK asynchronously
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
+// }
+
+</script>
+
+<style type="text/css">
+#page
+{
+margin-top: 10%;
+background: #01b2fe;
+height: 500px;
+color: #FFF;
+font-family:"Avenir","HelveticaNeue","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif; 
+font-size: 20px;
+line-height :22.6833px;
+padding: 50px;
+}
+body 
+{
+height: 500px;
+background:#384452;
+
+}
+.input
+{
+height: 60px;
+}
+
+
+</style>
+<div id ="page"class="ui two column stackable center aligned page grid">
+<div class="ui stripe community vertical segment">
+    <div class="ui two column middle aligned very relaxed stackable grid container">
+        <div class="column">
+            <form class="ui form" method="post" action="/dologin/aluno" />
+                <div class="field">
+                    <h2>Login</h2>
+                    <div class="ui left icon input">
+                        <input name="user" placeholder="Usuario ou Email" type="text">
+                        <i class="user icon"></i>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui left icon input">
+                        <input name="pass" placeholder="Senha" type="password">
+                        <i class="lock icon"></i>
+                    </div>
+                </div>
+                <input type="submit" class="ui blue submit button" value="Login" />
+
+               <h4><a> Esqueceu Sua Senha ? </a></h4>
+            </form>
+        </div>
+        <div class="ui vertical divider">OU</div>
+        <div class="center aligned column">
+            <h2>voce pode logar tambem com</h2>
+            <button class="ui large facebook button"><i class="facebook icon"></i> Facebook </button>
+            <button class="ui large  google plus button"><i class="google plus icon"></i> Google Plus </button>
+            <button class="ui large linkedin button"><i class="linkedin icon"></i> LinkedIn </button>
+        </div>
+    </div>
+</div>
+</div>
+
+<script type="text/javascript">
+
+$('.ui.dropdown')
+  .dropdown()
+;
+</script>
+{% endblock %}

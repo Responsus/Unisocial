@@ -1,0 +1,93 @@
+{% extends "aluno/base.html" %}
+{% block content %}   
+<div id="centro"> 
+   <div class="eight wide column">
+        <div class="row">
+            <div class="ui raised padded segment">
+                <h1 class="ui dividing header">Forum</h1>
+                <div class="ui comments">
+                <h4 class="ui dividing header">Recentes</h4>
+                    <div class="ui raises padded segment">
+                        <div class="comment">
+                            <div class="content">
+                                <a class="ui header">Ajuda</a>
+                                <div class="metadata">
+                                    <div class="date">2 dias atrás</div>
+                                </div>
+                                <div class="text">Alguem me explica a aula de hoje <div class="ui right floated segment mini horizontal statistic">
+                                      <div class="value">25 </div>
+                          <div class="label">Posts </div>
+                            </div> </div> 
+                            <div class="ui rating" data-rating="3" data-max-rating="5"></div>
+                    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui comments">
+                    <div class="ui  raised padded segment">
+                        <div class="comment">
+                            <div class="content">
+                                <a class="ui header">Trabalho De ingles</a>
+                                <div class="metadata">
+                                    <div class="date">5 dias atrás</div>
+                                </div>
+                                <div class="text">Alguem Fez o Trabalho de ingles? <div class="ui right floated segment mini horizontal statistic">
+                                      <div class="value">10 </div>
+                          <div class="label">Posts </div>
+                            </div></div>
+                                <div class="ui rating" data-rating="3" data-max-rating="5"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+   
+
+                <div class="ui comments">
+                <h4 class="ui dividing header">Fechados</h4>
+                    <div class="ui  tertiary padded segment">
+                        <div class="comment">
+                            <div class="content">
+                                <a   href="/alunos/forum/1" class="ui header">Ajuda</a>
+                                <div class="metadata">
+                                    <div class="date"> 5 horas atrás</div>
+                                </div>
+                                <div class="text">Nao consegui entrar no site do aluno alguem conseguiu? 
+                                <div class="ui right floated segment mini horizontal statistic">
+                                      <div class="value">2 </div>
+                          <div class="label">Posts </div>
+                            </div> </div>
+                            <div class="ui rating" data-rating="3" data-max-rating="5"></div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                </div>
+                <div class="ui comments">
+                    <div class="ui  tertiary  padded segment">
+                        <div class="comment">
+                            <div class="content">
+                                <a class="ui header">Procuro Grupo</a>
+                                <div class="metadata">
+                                    <div class="date">10 dias atrás</div>
+                                </div>
+                                <div class="text">Alguma vaga para Grupo ? <div class="ui right floated segment mini horizontal statistic">
+                                      <div class="value">60 </div>
+                          <div class="label">Posts </div>
+                            </div></div>
+                            <div class="ui rating" data-rating="3" data-max-rating="5"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+$('.ui.rating')
+  .rating()
+;
+    </script>
+    </div>
+</div>  
+{% endblock %}

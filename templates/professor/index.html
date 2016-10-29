@@ -1,0 +1,64 @@
+{% extends "professor/base.html" %}
+{% block content %}   
+    <div class="eight wide column">
+        <div class="row">
+            <div class="ui segment">
+                <label>FMU</label>          
+                <table class="ui celled padded table">
+                    <th>Turma</th><th>Curso</th><th>Semestre</th></tr>
+                    {% for t in turmas %}
+                    <tr><td>{{t.Turmas.id}}</td><td>{{t.Cursos.nome}}</td><td>4º Semestre</td></tr>
+                    {% endfor %}                  
+                </table>
+                <table class="ui celled padded table">
+                    <thead>
+                        <tr><th class="single line">Código</th><th>Disciplina</th><th>Dia da Semana</th><th>Sala</th><th>Professor</th></tr></thread>
+                        {% for d in disciplinas %}
+                        <tr><td>{{d.Disciplinas.id}}</td><td>{{d.Disciplinas.nome}}</td><td>{{d.Curso_Disciplina.dia}}</td><td>{{d.Curso_Disciplina.sala}}</td><td>{{d.Professores.nome}}</td></tr>
+                        {%  endfor %}            
+                </table>
+            </div>
+        </div>
+
+        <div class="ui segment">
+            <label>Trabalhos</label>
+            <table class="ui celled padded table">
+                <thead>
+                    <tr><th class="single line">Código</th><th>Disciplina</th><th>Data de Entrega</th><th>Assunto</th><th>Nota</th></tr>
+                    <tr><td>6532</td><td>Aplicação para Web</td><td>10/09/2015</td><td>Python para Web</td><td>10</td></tr>
+                    <tr><td>6532</td><td>Estrutura de Dados Avançada</td><td>10/09/2015</td><td>Ordenação</td><td>10</td></tr>
+                    <tr><td>6532</td><td>Qualidade de Software</td><td>10/09/2015</td><td>Usabilidade</td><td>10</td></tr>
+                    <tr><td>6532</td><td>Segurança e Auditoria de Sistemas</td><td>10/09/2015</td><td>Pentest</td><td>10</td></tr>
+                    <tr><td>6532</td><td>Sistemas Distribuidos - Clusters</td><td>10/09/2015</td><td>Load Balance</td><td>10</td></tr>
+                </thead>
+            </table>
+        </div>
+        <div class="ui segment">
+            <label>Notas</label>
+            <table class="ui celled padded table">
+                <thead>
+                    <tr><th class="single line">Código</th><th>Disciplina</th><th>Media</th><th>Ano</th></tr></tr>
+                    <tr><td>6532</td><td>Aplicação para Web</td><td>0</td><td>2015</td></tr>
+                    <tr><td>6532</td><td>Estrutura de Dados Avançada</td><td>0</td><td>2015</td></tr>
+                    <tr><td>6532</td><td>Qualidade de Software</td><td>0</td><td>2015</td></tr>
+                    <tr><td>6532</td><td>Segurança e Auditoria de Sistemas</td><td>0</td><td>2015</td></tr>
+                    <tr><td>6532</td><td>Sistemas Distribuidos - Clusters</td><td>0</td><td>2015</td></tr>
+                </thead>
+            </table>
+        </div>
+        <div class="ui segment">
+            <label>Faltas</label>
+            <table class="ui celled padded table">
+                <thead>
+                    <tr><th class="single line">Código</th><th>Disciplina</th><th>Faltas</th><th>Percentual de Presença</th><tr>
+                    <tr><td>6532</td><td>Aplicação para Web</td><td>0</td><td>100%</td></tr>
+                    <tr><td>6532</td><td>Estrutura de Dados Avançada</td><td>0</td><td>100%</td></tr>
+                    <tr><td>6532</td><td>Qualidade de Software</td><td>0</td><td>100%</td></tr>
+                    <tr><td>6532</td><td>Segurança e Auditoria de Sistemas</td><td>0</td><td>100%</td></tr>
+                    <tr><td>6532</td><td>Sistemas Distribuidos - Clusters</td><td>0</td><td>100%</td></tr>
+                </thead>
+            </table>
+       </div>  
+    </div>            
+</div> 
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "professor/base.html" %}
+{% block content %}
+    <div class="eight wide column">
+        <div class="ui padded segment">
+        <form class="ui form">
+            <h4 class="ui dividing header">Cadastro</h4>
+            <div class="field">
+                <label>nome</label>
+                <div class="two fields">
+                    <div class="field">
+                        <input name="nome" placeholder="nome" type="text">
+                    </div>
+                    <div class="field">
+                        <input name="sobrenome" placeholder="sobrenome" type="text">
+                    </div>
+                </div>
+            </div>
+            <div class="field">
+                <label>email</label>
+                <div class="fields">
+                    <div class="twelve wide field">
+                        <input name="email" placeholder="email" type="email">
+                    </div>
+                </div>
+            </div>
+            <div class="two fields">
+                <div class="field">
+                    <label>Curso</label>
+                    <select class="ui fluid dropdown">
+                        <option value="">Escolha o Curso</option>
+                        <option >????</option>
+                        <option >?????</option>
+                        <option >??????</option>
+                        <option >??????????</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label>Turma</label>
+                    <select class="ui fluid dropdown">
+                        <option value="">Escolha a Turma</option>
+                        <option value="1">Manha</option>
+                        <option value="2">Tarde</option> 
+                        <option value="3">noite</option>            
+                    </select>
+                </div>
+            </div>
+             <br/>
+             <div class="ui center aligned container"> <button class="ui green large button">Salvar</button></div> 
+            </div> 
+    </div>
+</div>
+{% endblock %}

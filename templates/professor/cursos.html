@@ -1,0 +1,188 @@
+
+{% extends "/professor/base.html" %}
+{% block content %}
+<div id="centro">
+</br>
+  <h4>Cursos</h4>
+     <button class="ui green button">Novo</button>
+      <br/><br/>
+      <div class="eight wide column">
+        <div class="row">
+          <div class="ui segment">
+            <table class="ui celled padded unstackable table">
+              <thead>
+                <tr>
+                  <th>
+                    Nome
+                  </th>
+                  <th>
+                    Instituição
+                  </th>
+                  <th>
+                    Turmas
+                  </th>
+                  <th>
+                    Ações
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    Programação Web
+                  </td>
+                  <td>
+                    Faculdade 1
+                  </td>
+                  <td>
+                    1
+                  </td>
+                  <td>
+                    <button class="ui blue button">Editar</button>
+                    <button class="ui red button">Criar Turma</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+  </div>
+  <div class="ui tab" data-tab="templates">
+    <div class="eight wide column">
+      <div class="row">
+        <div class="ui segment">
+          <table class="ui celled padded unstackable table">
+            <thead>
+              <tr>
+                <th>Template</th><th>Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Programação web</td><td>
+                  <button class="ui blue button">Novo</button>
+                  <button class="ui red button">Visualizar</button>
+                  <button class="ui violet button">Compartilhar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Banco de dados</td><td>
+                  <button class="ui blue button">Novo</button>
+                  <button class="ui red button">Visualizar</button>
+                  <button class="ui violet button">Compartilhar</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ui compartilhar modal">
+  <div class="header">Compartilhar</div>
+  <div class="content">
+    <div class="ui input" style="margin-bottom:5px;">
+      <input type="text" placeholder="Digite o nome do professor">
+    </div>
+
+    <div class="row">
+      <div class="ui segment">
+        <table class="ui celled padded unstackable table">
+          <thead>
+            <tr>
+              <th>Nome</th><th>Permissão</th><th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>João Pereira</td>
+              <td>
+                <div class="ui checked checkbox">
+                  <input checked="" type="checkbox">
+                  <label>Pode editar?</label>
+                </div>
+              </td>
+              <td><button class="ui red button">Remover</button></td>
+            </tr>
+            <tr>
+              <td>Fernando Gomes</td>
+              <td>
+                <div class="ui checked checkbox">
+                  <input type="checkbox">
+                  <label>Pode editar?</label>
+                </div>
+              </td>
+              <td><button class="ui red button">Remover</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="actions">
+    <button class="ui green deny button">Ok</button>
+  </div>
+</div>
+
+<div class="ui novogrupo large modal">
+    <div class="header">Novo Curso</div>
+    <div class="content">
+        <div class="ui form">
+            <div class="field">
+                <label>Nome</label>
+                <div class="one field">
+                    <div class="field">
+                        <input type="text" name="curso-nome" placeholder="Digite aqui o nome do curso">
+                    </div>
+                </div>
+            </div>
+            <div class="field">
+                <label>Descrição</label>
+                <div class="one field">
+                    <div class="field">
+                        <textarea id="curso-descricao" class="form-control" rows="2" placeholder="Digite aqui uma descrição sobre o seu curso"></textarea>
+                    </div>
+                </div>
+            </div>
+            <h4 class="ui horizontal divider header">
+            <i class="book icon"></i>
+            Aulas
+            </h4>
+            <div id="aulas-curso-container" class="ui cards">
+                <div class="card">
+                    <div class="content">
+                        <div class="header">Adicionar Aula <a id="nova-aula-botao"><i class="plus green icon"></i></a></div>
+                        <div class="description">
+                            Clique no botão de + para adicionar uma nova aula
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="actions">
+<button class="ui green ok button" id="cadastrar-curso-professor">Criar</button>
+<button class="ui cancel button">Cancelar</button>
+</div>
+</div>
+
+<script type="text/javascript">
+  $(function()
+  {
+    $('.tabular.menu .item').tab();
+    $('.ui.violet.button').click(function()
+    {
+      $('.ui.compartilhar.modal').modal('show');
+    });
+
+    $('.ui.green.button').click(function()
+    {
+      $('.ui.novogrupo.large.modal').modal('show');
+    });
+
+  });
+</script>
+<script src="/static/js/professor/curso_professor.js"></script>
+{% endblock %}

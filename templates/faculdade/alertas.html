@@ -1,0 +1,17 @@
+{% extends "faculdade/base.html" %}
+{% block content %}
+    <div id="centro">
+    <div class="six wide column">
+        <span><a href="/faculdade/alertas/novo/"</a><button class="ui button"> <i class=" plus green icon"> </i>Novo Alerta </button></a></span>
+        <table class="ui celled padded unstackable table">
+            <thead>
+                <tr> <th class="single line">Código</th><th>Nome</th><th>Turmas</th><th>Assunto</th><th>Nota</th></tr>
+                {% for c in cursos %}
+                <tr><td>{{ c.id }}</td><td>{{ c.nome }}</td><td>10</td><td>Python para Web</td><td>10</td></tr>
+                {% endfor %}
+            </thead>
+        </table>
+    </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends "aluno/base.html" %}
+{% block content %}   
+<div id="centro">
+        <div class="ui segment">
+        <div class="ui two column grid">
+        <div class="row">
+			{% for c in curso %}
+				<h2 class="ui header">{{c.nome}}</h2>
+				{% for m in c.modulos %}
+                <div class="column">
+					<div class="ui cards ">
+                      <div class="card">
+                        <div class="content">
+                          <div class="header">Modulo: {{m.nome}}</div>
+                          <div class="meta">Disciplinas</div>
+                          <div class="description">
+                            {% for d in m.disciplinas %}
+					        <p>{{d.nome}}</p>
+					        {% endfor %}
+					        </p>
+                          </div>
+                          </div>
+                        </div>
+                      </div>
+                 <br/>
+                 </div>
+				{% endfor %}
+			{% endfor %}
+	        </div>
+		</div>
+    </div>
+
+</div>
+{% endblock %}
